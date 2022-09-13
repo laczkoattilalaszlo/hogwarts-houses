@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Room details</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link th:href="@{/css/site.css}" rel="stylesheet" />
+        <script th:src="@{/js/room.js}" defer></script>
+    </head>
+
+    <body th:style="'background: url(/img/background_parchment.jpg)'">
+
+        <div id="header-container">
+            <div id="title-container">
+                <h1>Room Details</h1>
+            </div>
+            <div id="menu-container">
+                <a href="/"><button>Home</button></a>
+                <a href="/rooms"><button>Rooms</button></a>
+                <a href="/students"><button>Students</button></a>
+            </div>
+        </div>
+
+        <div id="content-container">
+            <div class="block">
+                <h2>Room Details</h2>
+                <table>
+                    <tr>
+                        <th>Room ID</th>
+                        <th>Room name</th>
+                        <th>House Type</th>
+                        <th>Students</th>
+                    </tr>
+                    <tr th:id="${room.uuid}">
+                        <td th:id="uuid-old" th:text="${room.uuid}"></td>
+                        <td th:id="name-old" th:text="${room.name}"></td>
+                        <td th:id="house-type-old" th:text="${room.houseType}"></td>
+                        <td th:id="students-old">
+                        <span th:each="student, iterStat : ${room.students}">
+                            <span th:text="!${iterStat.last} ? ${student} + ',' : ${student}"></span>
+                        </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="block">
+                <h2>Add Student To Room</h2>
+                <form method="post" action="/rooms/room/add-student">
+                    <input type="hidden" name="roomId" th:value="${room.uuid}">
+                    <label>Students:
+                        <select id="students" name="studentId" required>
+                            <option value="" selected disabled>Select from list</option>
+                            <!-- Options are coming from JavaScript. -->
+                        </select>
+                    </label>
+                    <input type="submit" id="add-student-button" value="Add Student">
+                </form>
+            </div>
+
+            <div class="block">
+                <h2>Modify Room</h2>
+                <label>Room ID: <input th:id="uuid-new" type="text" name="uuid" th:value="${room.uuid}" disabled></label>
+                <label>Name: <input th:id="name-new" type="text" name="name"></label>
+                <label>House Type:
+                    <select th:id="house-type-new" name="houseType" required>
+                        <option selected="true" disabled="disabled">Select from list</option>
+                        <option value="GRYFFINDOR">GRYFFINDOR</option>
+                        <option value="HUFFLEPUFF">HUFFLEPUFF</option>
+                        <option value="RAVENCLAW">RAVENCLAW</option>
+                        <option value="SLYTHERIN">SLYTHERIN</option>
+                    </select>
+                </label>
+                <button id="modify-button" th:data-id="${room.uuid}">Modify Room</button>
+            </div>
+        </div>
+
+    </body>
+
+</html>

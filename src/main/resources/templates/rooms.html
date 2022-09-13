@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>List of Rooms</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link th:href="@{/css/site.css}" rel="stylesheet" />
+        <script th:src="@{/js/rooms.js}" defer></script>
+    </head>
+
+    <body th:style="'background: url(/img/background_parchment.jpg)'">
+
+        <div id="header-container">
+            <div id="title-container">
+                <h1>Rooms</h1>
+            </div>
+            <div id="menu-container">
+                <a href="/"><button>Home</button></a>
+                <a href="/rooms"><button>Rooms</button></a>
+                <a href="/students"><button>Students</button></a>
+            </div>
+        </div>
+
+        <div id="content-container">
+            <div class="block">
+                <h2>Add New Room</h2>
+                <form method="post">
+                    <label>Name: <input type="text" name="name"></label>
+                    <label>House Type:
+                        <select name="house" required>
+                            <option value="" selected disabled>Select from list</option>
+                            <option value="GRYFFINDOR">GRYFFINDOR</option>
+                            <option value="HUFFLEPUFF">HUFFLEPUFF</option>
+                            <option value="RAVENCLAW">RAVENCLAW</option>
+                            <option value="SLYTHERIN">SLYTHERIN</option>
+                        </select>
+                    </label>
+                    <input type="submit" value="Crete New Room">
+                </form>
+            </div>
+
+            <div class="block">
+                <h2>List of Rooms</h2>
+                <table>
+                    <tr>
+                        <th>Room ID</th>
+                        <th>Room name</th>
+                        <th>House Type</th>
+                    </tr>
+                    <tr th:each="room : ${rooms}" th:id="${room.uuid}">
+                        <td th:text="${room.uuid}"></td>
+                        <td th:text="${room.name}"></td>
+                        <td th:text="${room.houseType}"></td>
+                        <td><a th:href="@{/rooms/{id}(id=${room.uuid})}">Edit This Room</a></td>
+                        <td><button class="delete-button" th:data-id="${room.uuid}">Delete This Room</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="block">
+                <h2>Available Rooms</h2>
+                <div id="available-rooms"></div>
+            </div>
+
+            <div class="block">
+                <h2>Room for Rat Owners (Cat and Owl Free Rooms)</h2>
+                <div id="room-for-rat-owners"></div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

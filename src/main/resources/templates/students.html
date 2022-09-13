@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Students</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link th:href="@{/css/site.css}" rel="stylesheet" />
+    </head>
+
+    <body th:style="'background: url(/img/background_students.jpg)'">
+
+        <div id="header-container">
+            <div id="title-container">
+                <h1>Students</h1>
+            </div>
+            <div id="menu-container">
+                <a href="/"><button>Home</button></a>
+                <a href="/rooms"><button>Rooms</button></a>
+                <a href="/students"><button>Students</button></a>
+            </div>
+        </div>
+
+        <div id="content-container">
+            <div class="block">
+                <h2>Add Student</h2>
+                <form method="post">
+                    <label>Name: <input type="text" name="name"></label>
+                    <label>House Type:
+                        <select name="house" required>
+                            <option value="" selected disabled>Select from list</option>
+                            <option value="GRYFFINDOR">GRYFFINDOR</option>
+                            <option value="HUFFLEPUFF">HUFFLEPUFF</option>
+                            <option value="RAVENCLAW">RAVENCLAW</option>
+                            <option value="SLYTHERIN">SLYTHERIN</option>
+                        </select>
+                    </label>
+                    <label>Pet Type:
+                        <select name="pet" required>
+                            <option value="" selected disabled>Select from list</option>
+                            <option value="CAT">CAT</option>
+                            <option value="RAT">RAT</option>
+                            <option value="OWL">OWL</option>
+                            <option value="NONE">NONE</option>
+                        </select>
+                    </label>
+                    <input type="submit" value="Add Student">
+                </form>
+            </div>
+
+            <div class="block">
+                <h2>List of Students</h2>
+                <table>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student name</th>
+                        <th>House Type</th>
+                        <th>Pet Type</th>
+                    </tr>
+                    <tr th:each="student : ${students}">
+                        <td th:text="${student.uuid}"></td>
+                        <td th:text="${student.name}"></td>
+                        <td th:text="${student.houseType}"></td>
+                        <td th:text="${student.petType}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </body>
+
+</html>

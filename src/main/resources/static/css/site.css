@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 5pt;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+#header-container {
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+}
+
+    #title-container {
+        width: 15%;
+        text-align: center;
+        background-color: darkgrey;
+    }
+
+    #menu-container {
+        align-self: center;
+        width: 85%;
+        margin: 10pt;
+    }
+
+#content-container {
+    margin: 40pt;
+}
+
+    .block {
+        margin: 30pt;
+    }
