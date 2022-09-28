@@ -11,4 +11,4 @@ The application is deployed on Heroku, so you can try it by clicking on this lin
 <br>
 https://hogwarts-houses.herokuapp.com/
 
-![](https://github.com/laczkoattilalaszlo/different-square/blob/main/image/application_screenshot.png)
+![](https://github.com/laczkoattilalaszlo/hogwarts-houses/blob/main/src/main/resources/static/img/application_screenshot.png)
