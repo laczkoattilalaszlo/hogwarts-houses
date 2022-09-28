@@ -4,7 +4,7 @@ window.addEventListener('load', async () =>{
 });
 
 async function loadUsersForSelectInput() {
-    const response = await fetch(`http://localhost:8080/students/get-all-students`, {method: 'GET'});
+    const response = await fetch(`${location.origin}/students/get-all-students`, {method: 'GET'});
     if (response.ok) {
         const data = await response.json();
         const studentsSelect = document.querySelector("#students");
@@ -29,7 +29,7 @@ function addEventListenerToModifyButton() {
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(payload)
         };
-        const response = await fetch(`http://localhost:8080/rooms/${modifyButton.dataset.id}`, message);
+        const response = await fetch(`${location.origin}/rooms/${modifyButton.dataset.id}`, message);
         if (response.ok == true) {
             const data = await response.json();
 

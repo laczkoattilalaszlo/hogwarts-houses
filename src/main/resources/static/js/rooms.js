@@ -5,7 +5,7 @@ window.addEventListener('load', async () => {
 });
 
 async function loadAvailableRooms() {
-    const response = await fetch(`http://localhost:8080/rooms/available`, {method: 'GET'});
+    const response = await fetch(`${location.origin}/rooms/available`, {method: 'GET'});
     if (response.ok) {
         const data = await response.json();
         const availableRooms = document.querySelector("#available-rooms");
@@ -18,7 +18,7 @@ async function loadAvailableRooms() {
 }
 
 async function loadCatAndOwlFreeRooms() {
-    const response = await fetch(`http://localhost:8080/rooms/rat-owners`, {method: 'GET'});
+    const response = await fetch(`${location.origin}/rooms/rat-owners`, {method: 'GET'});
     if (response.ok) {
         const data = await response.json();
         const catAndOwlFreeRooms = document.querySelector("#room-for-rat-owners");
@@ -35,7 +35,7 @@ function addEventListenerToDeleteButton() {
 
     for (let deleteButton of deleteButtons) {
         deleteButton.addEventListener("click", () => {
-            fetch(`http://localhost:8080/rooms/${deleteButton.dataset.id}`, {method: 'DELETE'}).then(
+            fetch(`${location.origin}/rooms/${deleteButton.dataset.id}`, {method: 'DELETE'}).then(
                 response => {
                     if (response.ok) {
                         document.getElementById(deleteButton.dataset.id).remove();
