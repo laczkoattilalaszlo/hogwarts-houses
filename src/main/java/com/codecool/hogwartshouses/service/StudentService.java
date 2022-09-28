@@ -20,8 +20,8 @@ public class StudentService {
         return studentDAO.getStudents();
     }
 
-    public void addStudent(String name, HouseType houseType, PetType petType) {
-        studentDAO.addStudent(name, houseType, petType);
+    public Student addStudent(String name, HouseType houseType, PetType petType) {
+        return studentDAO.addStudent(name, houseType, petType);
     }
 
 }

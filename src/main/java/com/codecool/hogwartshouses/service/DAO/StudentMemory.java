@@ -24,8 +24,10 @@ public class StudentMemory implements StudentDAO {
     }
 
     @Override
-    public void addStudent(String name, HouseType houseType, PetType petType) {
-        students.add(new Student(name, houseType, petType));
+    public Student addStudent(String name, HouseType houseType, PetType petType) {
+        Student student = new Student(name, houseType, petType);
+        students.add(student);
+        return student;
     }
 
 }

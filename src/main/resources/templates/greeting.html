@@ -12,18 +12,23 @@
 
         <div id="header-container">
             <div id="title-container">
-                <h1>Home</h1>
+                <h1>Hogwarts Houses</h1>
             </div>
             <div id="menu-container">
                 <a href="/"><button>Home</button></a>
-                <a href="/rooms"><button>Rooms</button></a>
                 <a href="/students"><button>Students</button></a>
+                <a href="/rooms"><button>Dormitories</button></a>
             </div>
         </div>
 
         <div id="content-container">
             <div class="block">
                 <h2 th:text="'Hello, ' + ${name} + '!'"></h2>
+                <p>This application is made for the professors of Hogwarts. It has 2 purposes:</p>
+                <ul>
+                    <li>Have a register of students.</li>
+                    <li>Manage the assignment of the dormitory rooms.</li>
+                </ul>
                 <img th:src="@{/img/dormitory.jpg}">
             </div>
         </div>

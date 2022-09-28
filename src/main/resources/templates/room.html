@@ -3,7 +3,7 @@
     <html xmlns:th="http://www.thymeleaf.org">
 
     <head>
-        <title>Room details</title>
+        <title>Dormitory Details</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link th:href="@{/css/site.css}" rel="stylesheet" />
         <script th:src="@{/js/room.js}" defer></script>
@@ -13,23 +13,23 @@
 
         <div id="header-container">
             <div id="title-container">
-                <h1>Room Details</h1>
+                <h1>Dormitory Details</h1>
             </div>
             <div id="menu-container">
                 <a href="/"><button>Home</button></a>
-                <a href="/rooms"><button>Rooms</button></a>
                 <a href="/students"><button>Students</button></a>
+                <a href="/rooms"><button>Dormitories</button></a>
             </div>
         </div>
 
         <div id="content-container">
             <div class="block">
-                <h2>Room Details</h2>
+                <h2>Dormitory Details</h2>
                 <table>
                     <tr>
-                        <th>Room ID</th>
-                        <th>Room name</th>
-                        <th>House Type</th>
+                        <th>Dormitory ID</th>
+                        <th>Dormitory name</th>
+                        <th>House name</th>
                         <th>Students</th>
                     </tr>
                     <tr th:id="${room.uuid}">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="block">
-                <h2>Add Student To Room</h2>
+                <h2>Add Student To Dormitory</h2>
                 <form method="post" action="/rooms/room/add-student">
                     <input type="hidden" name="roomId" th:value="${room.uuid}">
                     <label>Students:
@@ -60,10 +60,10 @@
             </div>
 
             <div class="block">
-                <h2>Modify Room</h2>
-                <label>Room ID: <input th:id="uuid-new" type="text" name="uuid" th:value="${room.uuid}" disabled></label>
-                <label>Name: <input th:id="name-new" type="text" name="name"></label>
-                <label>House Type:
+                <h2>Modify Dormitory</h2>
+                <label>Dormitory ID: <input th:id="uuid-new" type="text" name="uuid" th:value="${room.uuid}" disabled></label>
+                <label>Dormitory name: <input th:id="name-new" type="text" name="name"></label>
+                <label>House name:
                     <select th:id="house-type-new" name="houseType" required>
                         <option selected="true" disabled="disabled">Select from list</option>
                         <option value="GRYFFINDOR">GRYFFINDOR</option>
@@ -72,7 +72,7 @@
                         <option value="SLYTHERIN">SLYTHERIN</option>
                     </select>
                 </label>
-                <button id="modify-button" th:data-id="${room.uuid}">Modify Room</button>
+                <button id="modify-button" th:data-id="${room.uuid}">Modify Dormitory</button>
             </div>
         </div>
 

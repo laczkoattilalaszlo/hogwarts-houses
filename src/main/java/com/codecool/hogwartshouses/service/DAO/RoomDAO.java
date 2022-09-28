@@ -16,7 +16,7 @@ public interface RoomDAO {
 
     Set<Room> getCatAndOwlFreeRooms();
 
-    void addRoom(Room room);
+    Room addRoom(Room room);
 
     void addStudentToRoom(Room room, Student student);
 

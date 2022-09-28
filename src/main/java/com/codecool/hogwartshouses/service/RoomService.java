@@ -7,6 +7,7 @@ import com.codecool.hogwartshouses.service.DAO.RoomDAO;
 import com.codecool.hogwartshouses.service.DAO.StudentDAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -37,8 +38,8 @@ public class RoomService {
         return roomDAO.getCatAndOwlFreeRooms();
     }
 
-    public void addRoom(String name, HouseType houseType) {
-        roomDAO.addRoom(new Room(name, houseType));
+    public Room addRoom(String name, HouseType houseType) {
+        return roomDAO.addRoom(new Room(name, houseType));
     }
 
     public void addStudentToRoom(UUID roomId, UUID studentId) {

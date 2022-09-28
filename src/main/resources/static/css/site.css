@@ -13,6 +13,7 @@ table, th, td {
 
 table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 #header-container {
@@ -22,7 +23,7 @@ table {
 }
 
     #title-container {
-        width: 15%;
+        width: 30%;
         text-align: center;
         background-color: darkgrey;
     }
@@ -40,3 +41,7 @@ table {
     .block {
         margin: 30pt;
     }
+
+        #uuid-new {
+            width: 200pt;
+        }

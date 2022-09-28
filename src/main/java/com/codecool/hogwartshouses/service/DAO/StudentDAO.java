@@ -10,6 +10,6 @@ public interface StudentDAO {
 
     Set<Student> getStudents();
 
-    void addStudent(String name, HouseType houseType, PetType petType);
+    Student addStudent(String name, HouseType houseType, PetType petType);
 
 }

@@ -43,7 +43,3 @@ function addEventListenerToModifyButton() {
         }
     });
 }
-
-// Consultation:
-// - Ha letrehozok ketto Room-ot, es kitorlom a listaban a feljebb levot, akkor nem mukodik a UI-rol a torles. De valoszinu nem a torlessel van a baj az alabbaik szerint:
-//   Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "room.uuid" (template: "room" - line 25, col 17)
