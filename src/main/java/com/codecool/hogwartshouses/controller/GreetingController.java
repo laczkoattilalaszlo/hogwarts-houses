@@ -26,13 +26,10 @@ public class GreetingController {
     boolean firstVisit = true;
 
     @GetMapping("/")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="Witches and Wizards") String name, Model model) {
-        model.addAttribute("name", name);
-
+    public String greeting(Model model) {
         if (firstVisit == true) {
             initializeData();
         }
-
         return "greeting.html";
     }
 

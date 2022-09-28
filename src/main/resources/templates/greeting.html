@@ -23,12 +23,14 @@
 
         <div id="content-container">
             <div class="block">
-                <h2 th:text="'Hello, ' + ${name} + '!'"></h2>
-                <p>This application is made for the professors of Hogwarts. It has 2 purposes:</p>
-                <ul>
-                    <li>Have a register of students.</li>
-                    <li>Manage the assignment of the dormitory rooms.</li>
-                </ul>
+                <h2 th:text="'What is this?'"></h2>
+                <div id="introduction">
+                    This a Harry Potter themed student and dormitory register application.
+                    This is my first Spring Boot application, so the focus was on getting
+                    familiar with this framework. Other technologies like JavaScript, CSS,
+                    HTML are represented on a necessary minimum level. Data is stored in
+                    memory.
+                </div>
                 <img th:src="@{/img/dormitory.jpg}">
             </div>
         </div>

@@ -45,3 +45,8 @@ table {
         #uuid-new {
             width: 200pt;
         }
+
+        #introduction {
+            width: 450pt;
+            margin-bottom: 10pt;
+        }
