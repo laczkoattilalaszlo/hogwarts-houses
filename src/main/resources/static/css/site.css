@@ -4,12 +4,18 @@ body {
 
 h2 {
     margin-bottom: 5pt;
+    margin-top: 0;
 }
 
 table, th, td {
     border: 1px solid black;
     text-align: center;
 }
+
+    td {
+        height: 18pt;
+        color: dimgrey;
+    }
 
 table {
     width: 100%;
@@ -19,6 +25,11 @@ table {
 #header-container {
     display: flex;
     flex-direction: row;
+
+    margin-top: 40pt;
+    margin-left: 40pt;
+    margin-right: 40pt;
+
     background-color: grey;
 }
 
@@ -29,24 +40,62 @@ table {
     }
 
     #menu-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
         align-self: center;
+
         width: 85%;
         margin: 10pt;
     }
 
+        #menu-container a button {
+            width: 150pt;
+            height: 20pt;
+        }
+
 #content-container {
-    margin: 40pt;
+    margin-top: 20pt;
+    margin-bottom: 40pt;
+    margin-left: 40pt;
+    margin-right: 40pt;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10pt;
 }
 
     .block {
-        margin: 30pt;
+        background-color: lightgrey;
+        padding: 15pt;
     }
 
         #uuid-new {
             width: 200pt;
         }
 
-        #introduction {
-            width: 450pt;
-            margin-bottom: 10pt;
+/* HOME */
+
+    #introduction-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+        #introduction-container img {
+            width: 65%;
         }
+
+        #introduction {
+            width: 35%;
+            margin-left: 15pt;
+        }
+
+            #introduction p {
+                text-align: justify;
+            }
+
+/* DORMITORIES */
+
+    #available-rooms div, #room-for-rat-owners div {
+        margin-left: 10pt;
+    }

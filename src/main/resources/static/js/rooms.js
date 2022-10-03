@@ -11,7 +11,7 @@ async function loadAvailableRooms() {
         const availableRooms = document.querySelector("#available-rooms");
         let content = "";
         for (const room of data) {
-            content += `<div>- ${room.name}</div>`;
+            content += `<div>▸ ${room.name}</div>`;
         }
         availableRooms.insertAdjacentHTML('afterbegin', content);
     }
@@ -24,7 +24,7 @@ async function loadCatAndOwlFreeRooms() {
         const catAndOwlFreeRooms = document.querySelector("#room-for-rat-owners");
         let content = "";
         for (const room of data) {
-            content += `<div>- ${room.name}</div>`;
+            content += `<div>▸ ${room.name}</div>`;
         }
         catAndOwlFreeRooms.insertAdjacentHTML('afterbegin', content);
     }

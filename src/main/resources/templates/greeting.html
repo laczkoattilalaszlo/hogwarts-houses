@@ -8,7 +8,7 @@
         <link th:href="@{/css/site.css}" rel="stylesheet" />
     </head>
 
-    <body th:style="'background: url(/img/background.jpg)'">
+    <body th:style="'background: url(/img/background_parchment.jpg)'">
 
         <div id="header-container">
             <div id="title-container">
@@ -23,15 +23,32 @@
 
         <div id="content-container">
             <div class="block">
-                <h2 th:text="'What is this?'"></h2>
-                <div id="introduction">
-                    This a Harry Potter themed student and dormitory register application.
-                    This is my first Spring Boot application, so the focus was on getting
-                    familiar with this framework. Other technologies like JavaScript, CSS,
-                    HTML are represented on a necessary minimum level. Data is stored in
-                    memory.
+                <div id="introduction-container">
+                    <img th:src="@{/img/welcome_image.jpg}">
+                    <div id="introduction">
+                        <h2 th:text="'What is this project about?'"></h2>
+                        <p>
+                            This a Harry Potter themed student and dormitory register application,
+                            where you are able to:
+                        </p>
+                        <ul>
+                            <li>register students</li>
+                            <li>create, edit and delete dormitories</li>
+                            <li>assign students to dormitories</li>
+                            <li>check the available dormitories</li>
+                            <li>check the cat and owl free dormitories (for rat owners)</li>
+                        </ul>
+                        <p>
+                            This project is my first Spring Boot web application. It was created
+                            during my studies, and it was one of the many mandatory mini project
+                            requested by the programming school (Codecool). The focus was on
+                            getting familiar with this framework. Other technologies like JavaScript,
+                            CSS, HTML are represented on a necessary minimum level. Data is stored in
+                            memory.
+
+                        </p>
+                    </div>
                 </div>
-                <img th:src="@{/img/dormitory.jpg}">
             </div>
         </div>
 

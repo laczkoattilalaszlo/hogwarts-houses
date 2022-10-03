@@ -36,8 +36,8 @@ public class GreetingController {
     private void initializeData() {
         Room room1 = roomService.addRoom("Dormitory 1", HouseType.GRYFFINDOR);
         Room room2 = roomService.addRoom("Dormitory 2", HouseType.GRYFFINDOR);
-        roomService.addRoom("Dormitory 3", HouseType.GRYFFINDOR);
-        roomService.addRoom("Dormitory 4", HouseType.GRYFFINDOR);
+        roomService.addRoom("Dormitory 3", HouseType.HUFFLEPUFF);
+        roomService.addRoom("Dormitory 4", HouseType.RAVENCLAW);
 
         Student studentHarry = studentService.addStudent("Harry Potter", HouseType.GRYFFINDOR, PetType.OWL);
         Student studentRon = studentService.addStudent("Ron Weasley", HouseType.GRYFFINDOR, PetType.RAT);
@@ -46,6 +46,16 @@ public class GreetingController {
         room1.addStudent(studentHarry);
         room1.addStudent(studentRon);
         room2.addStudent(studentHermione);
+
+        studentService.addStudent("Draco Malfoy", HouseType.SLYTHERIN, PetType.FERRET);
+        studentService.addStudent("Neville Longbottom", HouseType.GRYFFINDOR, PetType.FROG);
+        studentService.addStudent("Su Li", HouseType.RAVENCLAW, PetType.RAT);
+        studentService.addStudent("Susan Bones", HouseType.HUFFLEPUFF, PetType.FROG);
+        studentService.addStudent("Blaise Zabin", HouseType.SLYTHERIN, PetType.RAT);
+        studentService.addStudent("Theodore Nott", HouseType.SLYTHERIN, PetType.OWL);
+        studentService.addStudent("Padama Patil", HouseType.RAVENCLAW, PetType.RAT);
+        studentService.addStudent("Terry Boot", HouseType.RAVENCLAW, PetType.CAT);
+        studentService.addStudent("Hanah Abbot", HouseType.HUFFLEPUFF, PetType.FROG);
 
         firstVisit = false;
     }
