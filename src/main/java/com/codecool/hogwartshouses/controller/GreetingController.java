@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/")
@@ -47,15 +46,15 @@ public class GreetingController {
         room1.addStudent(studentRon);
         room2.addStudent(studentHermione);
 
-        studentService.addStudent("Draco Malfoy", HouseType.SLYTHERIN, PetType.FERRET);
-        studentService.addStudent("Neville Longbottom", HouseType.GRYFFINDOR, PetType.FROG);
+        studentService.addStudent("Draco Malfoy", HouseType.SLYTHERIN, PetType.RAT);
+        studentService.addStudent("Neville Longbottom", HouseType.GRYFFINDOR, PetType.OWL);
         studentService.addStudent("Su Li", HouseType.RAVENCLAW, PetType.RAT);
-        studentService.addStudent("Susan Bones", HouseType.HUFFLEPUFF, PetType.FROG);
+        studentService.addStudent("Susan Bones", HouseType.HUFFLEPUFF, PetType.OWL);
         studentService.addStudent("Blaise Zabin", HouseType.SLYTHERIN, PetType.RAT);
         studentService.addStudent("Theodore Nott", HouseType.SLYTHERIN, PetType.OWL);
         studentService.addStudent("Padama Patil", HouseType.RAVENCLAW, PetType.RAT);
         studentService.addStudent("Terry Boot", HouseType.RAVENCLAW, PetType.CAT);
-        studentService.addStudent("Hanah Abbot", HouseType.HUFFLEPUFF, PetType.FROG);
+        studentService.addStudent("Hanah Abbot", HouseType.HUFFLEPUFF, PetType.RAT);
 
         firstVisit = false;
     }
